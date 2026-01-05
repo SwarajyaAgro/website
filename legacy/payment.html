@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Swarajya Agro Foods - Checkout</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                        "text-main-light": "#1c180d",
+                        "text-main-dark": "#f4f0e7",
+                        "border-light": "#e8e2ce",
+                        "border-dark": "#3d3624",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-6 lg:px-10 py-4">
+            <div class="flex items-center gap-4">
+                <div class="size-8 text-primary">
+                    <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                            d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2
+                    class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-[-0.015em]">
+                    Swarajya Agro Foods</h2>
+            </div>
+            <button
+                class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-background-light dark:bg-[#2a261a] hover:bg-border-light dark:hover:bg-border-dark transition-colors text-text-main-light dark:text-text-main-dark">
+                <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+            </button>
+        </header>
+        <!-- Main Content Layout -->
+        <main class="flex-1 flex justify-center py-6 lg:py-10 px-4 sm:px-6">
+            <div class="w-full max-w-[1280px] grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16">
+                <!-- Left Column: Forms -->
+                <div class="lg:col-span-7 flex flex-col gap-8">
+                    <!-- Breadcrumbs -->
+                    <nav class="flex flex-wrap items-center gap-2 text-sm">
+                        <a class="text-[#9c8749] hover:text-primary transition-colors font-medium" href="#">Cart</a>
+                        <span class="material-symbols-outlined text-[#9c8749] text-base">chevron_right</span>
+                        <a class="text-[#9c8749] hover:text-primary transition-colors font-medium"
+                            href="#">Information</a>
+                        <span class="material-symbols-outlined text-[#9c8749] text-base">chevron_right</span>
+                        <a class="text-[#9c8749] hover:text-primary transition-colors font-medium" href="#">Shipping</a>
+                        <span class="material-symbols-outlined text-[#9c8749] text-base">chevron_right</span>
+                        <span class="text-text-main-light dark:text-text-main-dark font-bold">Payment</span>
+                    </nav>
+                    <!-- Contact Information -->
+                    <section class="flex flex-col gap-4">
+                        <header class="flex items-center justify-between">
+                            <h3 class="text-lg font-bold tracking-tight text-text-main-light dark:text-text-main-dark">
+                                Contact Information</h3>
+                            <a class="text-sm font-medium text-[#9c8749] hover:text-primary underline" href="#">Log
+                                in</a>
+                        </header>
+                        <div class="flex flex-col gap-4">
+                            <label class="flex flex-col w-full">
+                                <span class="sr-only">Email</span>
+                                <input
+                                    class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                    placeholder="Email address" type="email" value="customer@example.com" />
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <div class="relative flex items-center">
+                                    <input checked=""
+                                        class="h-5 w-5 rounded border-border-light dark:border-border-dark text-primary focus:ring-primary focus:ring-offset-0 dark:bg-[#2a261a] dark:checked:bg-primary transition-colors"
+                                        type="checkbox" />
+                                </div>
+                                <span
+                                    class="text-sm text-text-main-light dark:text-text-main-dark opacity-80 group-hover:opacity-100 transition-opacity">Email
+                                    me with news and offers</span>
+                            </label>
+                        </div>
+                    </section>
+                    <!-- Shipping Address -->
+                    <section class="flex flex-col gap-4 pt-4 border-t border-border-light dark:border-border-dark">
+                        <h3 class="text-lg font-bold tracking-tight text-text-main-light dark:text-text-main-dark">
+                            Shipping Address</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input
+                                class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                placeholder="First Name" type="text" />
+                            <input
+                                class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                placeholder="Last Name" type="text" />
+                            <div class="md:col-span-2">
+                                <input
+                                    class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                    placeholder="Address" type="text" />
+                            </div>
+                            <div class="md:col-span-2">
+                                <input
+                                    class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                    placeholder="Apartment, suite, etc. (optional)" type="text" />
+                            </div>
+                            <input
+                                class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                placeholder="City" type="text" />
+                            <input
+                                class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                placeholder="Postal Code" type="text" />
+                            <div class="relative md:col-span-2">
+                                <select
+                                    class="form-select w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 pr-10 appearance-none">
+                                    <option>United States</option>
+                                    <option>Canada</option>
+                                    <option>United Kingdom</option>
+                                    <option>India</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Payment -->
+                    <section class="flex flex-col gap-4 pt-4 border-t border-border-light dark:border-border-dark">
+                        <header class="flex items-center justify-between">
+                            <h3 class="text-lg font-bold tracking-tight text-text-main-light dark:text-text-main-dark">
+                                Payment</h3>
+                            <div class="flex gap-2 opacity-60 grayscale hover:grayscale-0 transition-all">
+                                <!-- Simple representations of cards using div/text/icon for mockup -->
+                                <span class="material-symbols-outlined text-2xl" title="Credit Card">credit_card</span>
+                                <span class="material-symbols-outlined text-2xl" title="Payments">payments</span>
+                            </div>
+                        </header>
+                        <div
+                            class="rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] overflow-hidden">
+                            <div
+                                class="p-4 bg-background-light dark:bg-background-dark/50 border-b border-border-light dark:border-border-dark flex items-center justify-between">
+                                <span class="text-sm font-medium">Credit Card</span>
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                            </div>
+                            <div class="p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="md:col-span-2 relative">
+                                    <input
+                                        class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 pl-12 placeholder-[#9c8749]"
+                                        placeholder="Card number" type="text" />
+                                    <span
+                                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#9c8749]">credit_card</span>
+                                </div>
+                                <input
+                                    class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                    placeholder="Expiration (MM/YY)" type="text" />
+                                <div class="relative">
+                                    <input
+                                        class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                        placeholder="CVV" type="text" />
+                                    <span
+                                        class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-[#9c8749] text-lg cursor-help">help</span>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <input
+                                        class="form-input w-full rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-[#2a261a] text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 placeholder-[#9c8749]"
+                                        placeholder="Name on card" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Submit Button -->
+                    <div class="pt-6">
+                        <button
+                            class="w-full h-14 bg-primary hover:bg-[#d9aa20] text-[#1c180d] text-lg font-bold rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 group">
+                            Pay Now <span class="font-normal">$106.00</span>
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                        <p class="text-xs text-center text-[#9c8749] mt-4 flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-base">lock</span>
+                            All transactions are secure and encrypted.
+                        </p>
+                    </div>
+                </div>
+                <!-- Right Column: Order Summary -->
+                <div class="lg:col-span-5 h-full">
+                    <div
+                        class="sticky top-24 flex flex-col gap-6 bg-white dark:bg-[#2a261a] rounded-xl p-6 shadow-sm border border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-lg font-bold tracking-tight text-text-main-light dark:text-text-main-dark border-b border-border-light dark:border-border-dark pb-4">
+                            Order Summary</h3>
+                        <!-- Products List -->
+                        <div class="flex flex-col gap-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                            <!-- Item 1 -->
+                            <div class="flex gap-4 items-start">
+                                <div
+                                    class="relative h-20 w-20 shrink-0 rounded-lg border border-border-light dark:border-border-dark overflow-hidden bg-background-light dark:bg-background-dark">
+                                    <img alt="Glass jar of premium saffron threads on a dark surface"
+                                        class="h-full w-full object-cover"
+                                        data-alt="Glass jar of premium saffron threads on a dark surface"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjO3qiutricxKnKM2WwH_ul7xS0-nitWpa1McOj1uVDjZP8thKzpGLOfvoTBmFmFaRfPV6w5LtKMjxNs88AxxMDQDfOS7DHEoQ5mFR2nrW8hsktUafR7nzMOzbc5mwgfw5bRyKBTXLVurzLpyrJ_mA_VEZeYbAn9U53kZVCkCSPDUd4PrDURASzmvrlBbhFxFBTPr1G7xCJYDL7UqyQEOXj3VQXtxIGD4ADKsDj8xyae2djNYUy3ScJ5pfnVmLRRLvGNlsv-EvzYw" />
+                                    <span
+                                        class="absolute -top-0 -right-0 h-5 w-5 bg-primary text-[#1c180d] text-xs font-bold flex items-center justify-center rounded-bl-lg rounded-tr-sm">1</span>
+                                </div>
+                                <div class="flex flex-col flex-1 gap-1">
+                                    <h4
+                                        class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">
+                                        Royal Kashmiri Saffron</h4>
+                                    <p class="text-sm text-[#9c8749]">1 Gram / Premium Tin</p>
+                                </div>
+                                <div class="text-base font-bold text-text-main-light dark:text-text-main-dark">$32.00
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="flex gap-4 items-start">
+                                <div
+                                    class="relative h-20 w-20 shrink-0 rounded-lg border border-border-light dark:border-border-dark overflow-hidden bg-background-light dark:bg-background-dark">
+                                    <img alt="Golden turmeric powder in a wooden bowl with spoon"
+                                        class="h-full w-full object-cover"
+                                        data-alt="Golden turmeric powder in a wooden bowl with spoon"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs-3kDBQ1DrRC8CXkmvLUGa5Bd_cuIJzQ5KIe5eI6b1gbNM8IgT_OKM1eV5d7vyNqSrmHIMs748OtldeQYy-7QOX7i_4jM1CMCS-0258R9VZbhiYkrsXNhSlN8GN9_TiBr7u1uTkFg9P-H7SjButAweTsoFmHgLcz6Xo52OuVZRD6oQrG0SNuVz0CJqoeA7lX8dwe6EfzW-wxyvqp_qD_j79ZErAwMS74a22myYlAU2GzdNu_DlrAoYAf1fhWYF_SsNvhXFqCBUZA" />
+                                    <span
+                                        class="absolute -top-0 -right-0 h-5 w-5 bg-primary text-[#1c180d] text-xs font-bold flex items-center justify-center rounded-bl-lg rounded-tr-sm">2</span>
+                                </div>
+                                <div class="flex flex-col flex-1 gap-1">
+                                    <h4
+                                        class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">
+                                        Lakadong Turmeric</h4>
+                                    <p class="text-sm text-[#9c8749]">250g / Refill Pouch</p>
+                                </div>
+                                <div class="text-base font-bold text-text-main-light dark:text-text-main-dark">$28.00
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="flex gap-4 items-start">
+                                <div
+                                    class="relative h-20 w-20 shrink-0 rounded-lg border border-border-light dark:border-border-dark overflow-hidden bg-background-light dark:bg-background-dark">
+                                    <img alt="Green cardamom pods scattered on a rustic surface"
+                                        class="h-full w-full object-cover"
+                                        data-alt="Green cardamom pods scattered on a rustic surface"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2zzJPPaYhYG82LtUaBCAXu07MFW-PNZ5ulBzSbsIBR5dlHZ4a_Hu3pxZ2l3oNgNvi6R7dM32gzJknXmQv1-YQ3naGiyB-3z8DslbpO3p40F1jTn0bFRLCyg1UvQQNn3OoSG-KPDzZFuxsVDIVg2JgsVKTJjsgoaX0gaG6kCgMrqJ-zDBH0FxyF0tLwqz7MpfN_tXe-M6qqS8X-VisCTxud0Fbi69GO3PCtxbuh9RSiELPM1e2nbI51o-IS8zroP4Izt78jz3sAFk" />
+                                    <span
+                                        class="absolute -top-0 -right-0 h-5 w-5 bg-primary text-[#1c180d] text-xs font-bold flex items-center justify-center rounded-bl-lg rounded-tr-sm">1</span>
+                                </div>
+                                <div class="flex flex-col flex-1 gap-1">
+                                    <h4
+                                        class="text-base font-bold text-text-main-light dark:text-text-main-dark leading-tight">
+                                        Kerala Green Cardamom</h4>
+                                    <p class="text-sm text-[#9c8749]">100g / Glass Jar</p>
+                                </div>
+                                <div class="text-base font-bold text-text-main-light dark:text-text-main-dark">$18.00
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Discount Code -->
+                        <div class="flex gap-2 py-4 border-t border-b border-border-light dark:border-border-dark">
+                            <input
+                                class="form-input flex-1 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark focus:border-primary focus:ring-1 focus:ring-primary h-10 px-4 placeholder-[#9c8749] text-sm"
+                                placeholder="Gift card or discount code" type="text" />
+                            <button
+                                class="h-10 px-4 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-[#9c8749] font-bold rounded-lg hover:bg-border-light dark:hover:bg-border-dark transition-colors text-sm">Apply</button>
+                        </div>
+                        <!-- Cost Breakdown -->
+                        <div class="flex flex-col gap-2">
+                            <div class="flex justify-between items-center text-sm text-[#9c8749]">
+                                <span>Subtotal</span>
+                                <span class="text-text-main-light dark:text-text-main-dark font-medium">$106.00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-[#9c8749]">
+                                <span>Shipping</span>
+                                <span
+                                    class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold uppercase tracking-wider">Free</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-[#9c8749]">
+                                <span>Taxes</span>
+                                <span class="text-text-main-light dark:text-text-main-dark font-medium">$0.00</span>
+                            </div>
+                        </div>
+                        <!-- Total -->
+                        <div
+                            class="flex justify-between items-end border-t border-border-light dark:border-border-dark pt-4">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-base font-bold text-text-main-light dark:text-text-main-dark">Total</span>
+                                <span class="text-xs text-[#9c8749]">Including $0.00 in taxes</span>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-sm font-medium text-[#9c8749]">USD</span>
+                                <span
+                                    class="text-2xl font-bold text-text-main-light dark:text-text-main-dark">$106.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer (Simple) -->
+        <footer
+            class="py-6 border-t border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-center">
+            <div class="flex flex-wrap justify-center gap-4 text-xs text-[#9c8749] mb-2">
+                <a class="hover:underline" href="#">Refund policy</a>
+                <a class="hover:underline" href="#">Shipping policy</a>
+                <a class="hover:underline" href="#">Privacy policy</a>
+                <a class="hover:underline" href="#">Terms of service</a>
+            </div>
+            <p class="text-xs text-text-main-light/50 dark:text-text-main-dark/50">© 2023 Swarajya Agro Foods Pvt. Ltd.
+                All rights
+                reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

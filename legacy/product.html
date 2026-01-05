@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Spice Route - The Royal Collection</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                        "neutral-dark": "#1c180d",
+                        "neutral-light": "#9c8749",
+                        "accent-cream": "#f4f0e7",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-neutral-dark dark:text-white font-display overflow-x-hidden flex flex-col min-h-screen">
+    <!-- Top Navigation -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-[#e8e2ce] dark:border-white/10">
+        <div class="px-4 md:px-10 py-3 max-w-[1440px] mx-auto w-full">
+            <div class="flex items-center justify-between gap-4">
+                <!-- Logo & Nav Links -->
+                <div class="flex items-center gap-8 lg:gap-12">
+                    <a class="flex items-center gap-3 text-neutral-dark dark:text-white group" href="#">
+                        <div class="size-8 text-primary transition-transform group-hover:rotate-12">
+                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight">Spice Route</h2>
+                    </a>
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Shop All</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Collections</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Heritage</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Recipes</a>
+                    </nav>
+                </div>
+                <!-- Search & Actions -->
+                <div class="flex items-center justify-end gap-4 flex-1">
+                    <!-- Search Bar -->
+                    <div
+                        class="hidden md:flex w-full max-w-[280px] h-10 bg-accent-cream dark:bg-white/5 rounded-lg overflow-hidden group focus-within:ring-1 focus-within:ring-primary transition-all">
+                        <div class="flex items-center justify-center pl-3 text-neutral-light">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </div>
+                        <input
+                            class="w-full h-full bg-transparent border-none text-sm placeholder:text-neutral-light/70 focus:ring-0 text-neutral-dark dark:text-white px-3"
+                            placeholder="Search for spices..." />
+                    </div>
+                    <!-- Icons -->
+                    <div class="flex items-center gap-1">
+                        <button
+                            class="hidden sm:flex h-10 px-4 items-center justify-center rounded-lg bg-primary text-neutral-dark text-sm font-bold hover:bg-primary/90 transition-colors">
+                            Log In
+                        </button>
+                        <button
+                            class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 text-neutral-dark dark:text-white transition-colors relative">
+                            <span class="material-symbols-outlined">shopping_bag</span>
+                            <span class="absolute top-1.5 right-1.5 size-2 rounded-full bg-primary"></span>
+                        </button>
+                        <button
+                            class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 text-neutral-dark dark:text-white transition-colors">
+                            <span class="material-symbols-outlined">person</span>
+                        </button>
+                        <button
+                            class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 text-neutral-dark dark:text-white transition-colors flex items-center gap-1">
+                            <span class="material-symbols-outlined">language</span>
+                            <span class="text-xs font-bold">USD</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative w-full">
+        <div class="w-full h-[400px] md:h-[500px] relative flex items-center justify-center bg-neutral-900 overflow-hidden"
+            data-alt="Rich dark background with vibrant piles of saffron, chili powder, and turmeric arranged artistically with soft lighting"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCS_j9GEGwonOutl6ncsznqLg0Tmb_IRKEpezcG6cX0vFlJuPJ6ppf87OGXEaqojtGJiQhXlOXAcnSEW0H53tiPmjQPJelqgUN8T5bG3B_kZhj08IhPUMnlvitGPmrIkgAnktUHqR9W3tlKFJz5Nx35SnRr39EFu2oSNgQt9l8NevTyKnmZDc5luptqZh5qRLqMhCfhXi9vlPB3lZM-FLnfJyjCZkY_EDEKaSY8N9_qoJzUT-e5prfD5WE2Z_HUfENaF70sdgiiCts'); background-size: cover; background-position: center;">
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6">
+                <span
+                    class="px-3 py-1 bg-primary/20 backdrop-blur-md border border-primary/40 text-primary text-xs font-bold uppercase tracking-wider rounded-full">New
+                    Harvest 2024</span>
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight">
+                    The Royal Spice Collection
+                </h1>
+                <p class="text-white/90 text-lg md:text-xl font-light max-w-2xl">
+                    Hand-harvested, single-origin spices rooted in Ayurvedic tradition. Experience the true essence of
+                    India.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content Layout -->
+    <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-10 py-8 md:py-12">
+        <!-- Breadcrumbs -->
+        <nav class="flex flex-wrap items-center gap-2 text-sm mb-8">
+            <a class="text-neutral-light hover:text-primary transition-colors" href="#">Home</a>
+            <span class="text-neutral-light/50">/</span>
+            <a class="text-neutral-light hover:text-primary transition-colors" href="#">Shop</a>
+            <span class="text-neutral-light/50">/</span>
+            <span class="text-neutral-dark dark:text-white font-semibold">Whole Spices</span>
+        </nav>
+        <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Sidebar Filters (Desktop) -->
+            <aside class="w-full lg:w-64 flex-shrink-0 space-y-8 hidden lg:block">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">filter_list</span>
+                        Filters
+                    </h3>
+                    <!-- Filter Group: Categories -->
+                    <div class="border-t border-neutral-200 dark:border-white/10 py-4">
+                        <h4
+                            class="font-semibold text-sm mb-3 text-neutral-dark dark:text-white uppercase tracking-wider">
+                            Categories</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input checked=""
+                                    class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Whole
+                                    Spices (24)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Ground
+                                    Powders (18)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Masala
+                                    Blends (12)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Saffron
+                                    &amp; Vanilla (4)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Filter Group: Heat Level -->
+                    <div class="border-t border-neutral-200 dark:border-white/10 py-4">
+                        <h4
+                            class="font-semibold text-sm mb-3 text-neutral-dark dark:text-white uppercase tracking-wider">
+                            Heat Level</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Mild</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input checked=""
+                                    class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Medium</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Hot</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="rounded border-neutral-300 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary transition-colors">Extra
+                                    Hot</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Filter Group: Price Range -->
+                    <div class="border-t border-neutral-200 dark:border-white/10 py-4">
+                        <h4
+                            class="font-semibold text-sm mb-3 text-neutral-dark dark:text-white uppercase tracking-wider">
+                            Price</h4>
+                        <div class="flex items-center gap-2 text-sm">
+                            <input
+                                class="w-20 rounded border-neutral-300 bg-transparent text-neutral-dark dark:text-white focus:ring-primary focus:border-primary px-2 py-1"
+                                placeholder="$0" type="number" />
+                            <span class="text-neutral-400">-</span>
+                            <input
+                                class="w-20 rounded border-neutral-300 bg-transparent text-neutral-dark dark:text-white focus:ring-primary focus:border-primary px-2 py-1"
+                                placeholder="$100" type="number" />
+                            <button
+                                class="ml-2 p-1 bg-neutral-100 dark:bg-white/10 rounded hover:bg-primary hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Product Grid Area -->
+            <div class="flex-1">
+                <!-- Toolbar / Mobile Filter Trigger -->
+                <div
+                    class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-neutral-200 dark:border-white/10">
+                    <button
+                        class="lg:hidden w-full sm:w-auto px-4 py-2 border border-neutral-300 dark:border-white/20 rounded-lg flex items-center justify-center gap-2 hover:bg-neutral-50 dark:hover:bg-white/5 transition-colors">
+                        <span class="material-symbols-outlined text-sm">filter_list</span>
+                        <span class="text-sm font-semibold">Filter &amp; Sort</span>
+                    </button>
+                    <p class="text-neutral-light text-sm hidden sm:block">Showing <span
+                            class="text-neutral-dark dark:text-white font-semibold">24</span> Products</p>
+                    <div class="flex items-center gap-3">
+                        <label class="text-sm text-neutral-light hidden sm:block">Sort by:</label>
+                        <select
+                            class="bg-transparent border-none text-sm font-semibold text-neutral-dark dark:text-white focus:ring-0 cursor-pointer pr-8 py-0">
+                            <option>Best Selling</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest Arrivals</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Product Card 1 -->
+                    <div
+                        class="group relative flex flex-col bg-white dark:bg-white/5 rounded-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-black/50 transition-all duration-300">
+                        <div class="absolute top-3 left-3 z-20 flex gap-2">
+                            <span
+                                class="bg-primary text-neutral-dark text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Bestseller</span>
+                        </div>
+                        <div class="absolute top-3 right-3 z-20">
+                            <button
+                                class="p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm text-neutral-400 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                        </div>
+                        <!-- Image Container -->
+                        <div
+                            class="relative w-full aspect-[4/5] bg-[#f9f9f9] dark:bg-white/5 overflow-hidden flex items-center justify-center p-6">
+                            <img class="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Glass jar of vibrant red Kashmiri Chilli powder with a golden lid"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgGtOKqVSSAV55OJ0nZ0-0nswlxZwP6JbnjYB7O7WwIrjH1T1AEgfz24k5lDIzT7pI1z0YN2C5D0My_aeByet3gIu0wijc0HIztJIzv4_N6yDeGcIdzwu93WRxN4SV18h3JUd1bwQTFQyFs116_-eEV7bk1ATYvpP9nJFn4B9edEFbt_usTA209CUnIHLVYvSXONiQF6ExwLm38WMLuQaDp0Sl6YnjxmDPnMVp1aELtKSopBme0CdOSojGSVXERRbkHuaGqfIhycM" />
+                            <!-- Quick Add Button -->
+                            <button
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-neutral-dark font-bold py-3 rounded-lg shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <!-- Content -->
+                        <div class="p-5 flex flex-col gap-2 flex-1">
+                            <div
+                                class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                                <span>Kashmir, India</span>
+                                <div class="flex items-center text-primary">
+                                    <span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                    <span class="ml-1 text-neutral-dark dark:text-white font-medium">4.9</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-neutral-dark dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                Kashmiri Red Chilli Powder</h3>
+                            <p class="text-sm text-neutral-500 line-clamp-2">Known for its vibrant red color and mild
+                                heat. Perfect for curries.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold text-neutral-400 border border-neutral-200 dark:border-white/20 px-2 py-1 rounded">100g</span>
+                                <span class="text-lg font-bold text-neutral-dark dark:text-white">$12.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div
+                        class="group relative flex flex-col bg-white dark:bg-white/5 rounded-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-black/50 transition-all duration-300">
+                        <div class="absolute top-3 left-3 z-20 flex gap-2">
+                            <span
+                                class="bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Organic</span>
+                        </div>
+                        <div class="absolute top-3 right-3 z-20">
+                            <button
+                                class="p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm text-neutral-400 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[4/5] bg-[#f9f9f9] dark:bg-white/5 overflow-hidden flex items-center justify-center p-6">
+                            <img class="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Heap of organic yellow turmeric powder on a wooden spoon"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgtMf6VQHb2i69oFhXZHaew3Gqd5C2dy-Gj6j7-hdzQq6VxDzdPVo18uB4M2gs4JVZySoutRTyZ5Rm38scZXlbmMuVZ9bsrQGV-PvciHPC80eSX9mS6JRFeTsOwWZtkZ3vf4dWGhlBZOWTMn7qO37YRYl3pxEcjue_VEX0MdWYQrnr9HMCkdSstwEP4kW9aoE357ov2h_s-uaY1jr4PtCT8-9f_NEjjsBNTl51_ClUEyLM-r4bzlJQtuphaZ4dnCdlfcQfQWhWMLM" />
+                            <button
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-neutral-dark font-bold py-3 rounded-lg shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="p-5 flex flex-col gap-2 flex-1">
+                            <div
+                                class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                                <span>Alleppey, India</span>
+                                <div class="flex items-center text-primary">
+                                    <span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                    <span class="ml-1 text-neutral-dark dark:text-white font-medium">5.0</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-neutral-dark dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                Lakadong Turmeric</h3>
+                            <p class="text-sm text-neutral-500 line-clamp-2">High curcumin content (7-12%) for potent
+                                anti-inflammatory benefits.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold text-neutral-400 border border-neutral-200 dark:border-white/20 px-2 py-1 rounded">200g</span>
+                                <span class="text-lg font-bold text-neutral-dark dark:text-white">$18.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div
+                        class="group relative flex flex-col bg-white dark:bg-white/5 rounded-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-black/50 transition-all duration-300">
+                        <div class="absolute top-3 right-3 z-20">
+                            <button
+                                class="p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm text-neutral-400 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[4/5] bg-[#f9f9f9] dark:bg-white/5 overflow-hidden flex items-center justify-center p-6">
+                            <img class="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Whole green cardamom pods scattered on a dark surface"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaNC370bKVGaMHbueGNtxfR-NhiCk0F7xIW5Z0wAoiJbjolCBT2IDyf-AhpspGWmyi68aikeU8AV2GOMXB8tUkitj5DNm5mGJIzdfbOQgZcX_NV2PUwD_gTTOG1SVgOK7fjdlLqOi4Yqzsh94AbORmxzRVyOg_OR6HgV1u--KzNOvBOIExf3C0GRvQoqGoUw0c4VVZ18Q-ID-JQbdTX5eoV2P9Y2EEOrB-CYDQhvNLapVXhlEZXyPPnDQ-SUB7Un8sgLGoxHP_kM4" />
+                            <button
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-neutral-dark font-bold py-3 rounded-lg shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="p-5 flex flex-col gap-2 flex-1">
+                            <div
+                                class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                                <span>Idukki, India</span>
+                                <div class="flex items-center text-primary">
+                                    <span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                    <span class="ml-1 text-neutral-dark dark:text-white font-medium">4.8</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-neutral-dark dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                Royal Green Cardamom</h3>
+                            <p class="text-sm text-neutral-500 line-clamp-2">Hand-picked, extra-large pods bursting with
+                                aromatic oils.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold text-neutral-400 border border-neutral-200 dark:border-white/20 px-2 py-1 rounded">50g</span>
+                                <span class="text-lg font-bold text-neutral-dark dark:text-white">$22.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div
+                        class="group relative flex flex-col bg-white dark:bg-white/5 rounded-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-black/50 transition-all duration-300">
+                        <div class="absolute top-3 right-3 z-20">
+                            <button
+                                class="p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm text-neutral-400 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[4/5] bg-[#f9f9f9] dark:bg-white/5 overflow-hidden flex items-center justify-center p-6">
+                            <img class="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Black peppercorns in a wooden bowl on a rustic background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoJoRV8xO8oQ5FLO7Uizg2fnN2pRiZSQvw4lkXdZNb6QJ1Ni5IOh5OCp7JIjh0hnxJBiUkkeDdbzlS_JrhwLrxFPEc8ACIoF4fETFl4NfGcdl12mGxKLHl4nSypnS9u8ISo_ioE-m0aifO03OmUBJf7rCJbx7Aei3zHjyj-Nit3ooR3vWLBW0A0JeZpuh244GEzgs0VnJX2Y9W7_wGc8HtVeDja2-fz3zYLf-oxuTkeVTE8Olin45lNCcLcio6l9qo5Rgp8jvkHBs" />
+                            <button
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-neutral-dark font-bold py-3 rounded-lg shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="p-5 flex flex-col gap-2 flex-1">
+                            <div
+                                class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                                <span>Malabar Coast</span>
+                                <div class="flex items-center text-primary">
+                                    <span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                    <span class="ml-1 text-neutral-dark dark:text-white font-medium">4.7</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-neutral-dark dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                Tellicherry Peppercorns</h3>
+                            <p class="text-sm text-neutral-500 line-clamp-2">World's finest black pepper. Robust,
+                                complex, and aromatic.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold text-neutral-400 border border-neutral-200 dark:border-white/20 px-2 py-1 rounded">100g</span>
+                                <span class="text-lg font-bold text-neutral-dark dark:text-white">$14.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div
+                        class="group relative flex flex-col bg-white dark:bg-white/5 rounded-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-black/50 transition-all duration-300">
+                        <div class="absolute top-3 left-3 z-20 flex gap-2">
+                            <span
+                                class="bg-primary text-neutral-dark text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Limited</span>
+                        </div>
+                        <div class="absolute top-3 right-3 z-20">
+                            <button
+                                class="p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm text-neutral-400 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[4/5] bg-[#f9f9f9] dark:bg-white/5 overflow-hidden flex items-center justify-center p-6">
+                            <img class="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Cinnamon sticks bundled together with a rustic string"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuANlHzi1h49u_2XT980jtn3r8xABfEbLUqlVnoYDquKKNAuVTL9b9IIMUQp9tlD9zIdWby1_tyQy5Tbw9WIJqOdQydjLV5YwcUlo88PNdkSeixErDXx2Pk5nlqt_KZURlGLYdy_pHLFK1T3fCNdCtHK25Zh4hTFZskCo-T5dMRcrqUJ33AhDUFGvtaR3ClRiIWiX4PkE8STMDY7M4oz-gZ7eQ9cpkSOrw_gl0kSjxuaCydvA7kl_qTw6kS8kicugUENM2CjMurT70o" />
+                            <button
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-neutral-dark font-bold py-3 rounded-lg shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="p-5 flex flex-col gap-2 flex-1">
+                            <div
+                                class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                                <span>Kerala, India</span>
+                                <div class="flex items-center text-primary">
+                                    <span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                    <span class="ml-1 text-neutral-dark dark:text-white font-medium">5.0</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-neutral-dark dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                Ceylon Cinnamon Quills</h3>
+                            <p class="text-sm text-neutral-500 line-clamp-2">True cinnamon with delicate, sweet flavor
+                                and layered bark.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold text-neutral-400 border border-neutral-200 dark:border-white/20 px-2 py-1 rounded">50g</span>
+                                <span class="text-lg font-bold text-neutral-dark dark:text-white">$16.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div
+                        class="group relative flex flex-col bg-white dark:bg-white/5 rounded-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-black/50 transition-all duration-300">
+                        <div class="absolute top-3 right-3 z-20">
+                            <button
+                                class="p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm text-neutral-400 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[4/5] bg-[#f9f9f9] dark:bg-white/5 overflow-hidden flex items-center justify-center p-6">
+                            <img class="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Star anise seeds arranged in a pattern on a marble surface"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg1BMuvWFICf7XkyPb025KfIffy-bb5pfxhPF_QJcwqREWWhRblToFGkA4_Qd1KXSbu1ps5ajd_1nncwmX7eNvdWLjE2dC7f_cm1EibjHAemNqHUNaECpkDz9oNYvb5WQG3H8_bDQQC5oD--8z8IlAsCVtu_QTIoCEDor-Hc2kHlOlnuWBuFbpDdYMFFrPc52iZeXaX9afNl0gE7cUNg5LOs5bhGa_HB_AXdAHJm_EToltl5CYTOpYKQWRXZS2u4xq7jfcmd10xSw" />
+                            <button
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-neutral-dark font-bold py-3 rounded-lg shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="p-5 flex flex-col gap-2 flex-1">
+                            <div
+                                class="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                                <span>Arunachal Pradesh</span>
+                                <div class="flex items-center text-primary">
+                                    <span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                    <span class="ml-1 text-neutral-dark dark:text-white font-medium">4.6</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-neutral-dark dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                Star Anise</h3>
+                            <p class="text-sm text-neutral-500 line-clamp-2">Beautiful star-shaped spice with licorice
+                                notes. Essential for biryani.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold text-neutral-400 border border-neutral-200 dark:border-white/20 px-2 py-1 rounded">100g</span>
+                                <span class="text-lg font-bold text-neutral-dark dark:text-white">$10.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="mt-16 flex flex-col items-center gap-4">
+                    <span class="text-sm text-neutral-500">Showing 6 of 24 Products</span>
+                    <div class="w-48 h-1 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-1/4 h-full bg-primary rounded-full"></div>
+                    </div>
+                    <button
+                        class="mt-2 px-8 py-3 bg-neutral-dark dark:bg-white text-white dark:text-neutral-dark font-bold rounded-lg hover:bg-primary hover:text-neutral-dark transition-all transform hover:-translate-y-0.5 shadow-lg">
+                        Load More Spices
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-background-dark border-t border-neutral-200 dark:border-white/10 pt-16 pb-8">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-xl font-bold tracking-tight text-neutral-dark dark:text-white">Spice Route</h2>
+                    <p class="text-sm text-neutral-500 leading-relaxed">Bringing the authentic heritage of Indian spices
+                        to your global kitchen. Sustainably sourced, ethically harvested.</p>
+                    <div class="flex gap-4 mt-2">
+                        <span
+                            class="size-8 rounded-full bg-neutral-100 dark:bg-white/10 flex items-center justify-center text-neutral-dark dark:text-white hover:bg-primary transition-colors cursor-pointer">
+                            <span class="material-symbols-outlined text-[16px]">public</span>
+                        </span>
+                        <span
+                            class="size-8 rounded-full bg-neutral-100 dark:bg-white/10 flex items-center justify-center text-neutral-dark dark:text-white hover:bg-primary transition-colors cursor-pointer">
+                            <span class="material-symbols-outlined text-[16px]">alternate_email</span>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-neutral-dark dark:text-white mb-4">Shop</h3>
+                    <ul class="space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Whole Spices</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Powdered Spices</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Masala Blends</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-neutral-dark dark:text-white mb-4">Company</h3>
+                    <ul class="space-y-3 text-sm text-neutral-500 dark:text-neutral-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-neutral-dark dark:text-white mb-4">Newsletter</h3>
+                    <p class="text-sm text-neutral-500 mb-4">Subscribe to receive recipes, new harvest updates, and
+                        exclusive offers.</p>
+                    <div class="flex gap-2">
+                        <input
+                            class="flex-1 bg-neutral-50 dark:bg-white/5 border border-neutral-200 dark:border-white/10 rounded-lg px-4 py-2 text-sm focus:ring-primary focus:border-primary"
+                            placeholder="Your email" type="email" />
+                        <button
+                            class="px-4 py-2 bg-primary text-neutral-dark font-bold rounded-lg hover:bg-primary/90 transition-colors">Join</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-neutral-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-neutral-400">© 2024 Spice Route. All rights reserved.</p>
+                <div class="flex gap-6 text-xs text-neutral-400">
+                    <a class="hover:text-neutral-600 dark:hover:text-white transition-colors" href="#">Privacy
+                        Policy</a>
+                    <a class="hover:text-neutral-600 dark:hover:text-white transition-colors" href="#">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
